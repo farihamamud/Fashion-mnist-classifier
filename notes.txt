@@ -8,3 +8,6 @@
 - 5 epochs: test acc 0.843, Shirt 0.494 (Pullover confusion 220)
 - 15 epochs: test acc 0.855, Shirt 0.771 (Pullover confusion 71), but Sneaker fell 0.840 -> 0.707
 - Overall accuracy is noisy between epochs (0.872 at epoch 13, 0.855 at 15), lr=0.1. Report the final epoch.
+
+- NumPy version (hand-written forward and backward pass, same architecture, lr 0.1, batch 64, 5 epochs):
+  test acc 0.840, against 0.843 for PyTorch. Epoch 1 lower (0.757) because of different weight initialization.
