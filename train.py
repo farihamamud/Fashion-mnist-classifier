@@ -4,6 +4,7 @@ from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
 
 torch.manual_seed(42)
+EPOCHS = 5
 
 train_data = datasets.FashionMNIST("data", train=True, download=True, transform=transforms.ToTensor())
 test_data = datasets.FashionMNIST("data", train=False, download=True, transform=transforms.ToTensor())
@@ -35,7 +36,7 @@ def accuracy(loader):
 
 print("Accuracy before training:", accuracy(test_loader))
 
-for epoch in range(15):
+for epoch in range(EPOCHS):
     for images, labels in train_loader:
         loss = loss_fn(model(images), labels)
         optimizer.zero_grad()
